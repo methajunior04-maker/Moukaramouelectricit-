@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique MEG - Matériel Électrique Professionnel | Thiès</title>
+    <meta name="description" content="Découvrez notre sélection de matériel électrique de qualité : disjoncteurs, câbles, caméras et plus encore. Livraison disponible.">
+
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo MOUKARAMOU ELECTRICITE GENERALE">
+    </div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="apropos.html">À propos</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="devis.html">Devis</a>
+        <a href="index.html#assistant">Assistant</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" style="color: #ffd000;"><i class="fas fa-shopping-cart"></i> <span id="nb">0</span></a>
+    </nav>
+</header>
+
+<section class="page-banner">
+    <img src="banniere.png" alt="Bannière Boutique" class="banner-img">
+    <div style="position: relative; z-index: 3;">
+        <h1>Notre Boutique</h1>
+        <p style="font-size: 1.2rem; margin-top: 10px;">Matériel électrique professionnel pour tous vos projets</p>
+    </div>
+</section>
+
+<section class="shop">
+
+    <div class="product">
+        <div>
+            <img src="dysjoncteur.PNG" alt="Disjoncteur professionnel">
+            <h3>Disjoncteur</h3>
+            <p>Protection électrique fiable contre les surcharges et courts-circuits.</p>
+        </div>
+        <button onclick="ajouterPanier('Disjoncteur')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20un%20disjoncteur" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="cable%20electrique.PNG" alt="Câble électrique">
+            <h3>Câble électrique</h3>
+            <p>Conducteurs haute qualité conformes aux normes pour installations durables.</p>
+        </div>
+        <button onclick="ajouterPanier('Câble électrique')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20du%20câble%20électrique" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="camera.PNG" alt="Caméra de surveillance">
+            <h3>Caméra</h3>
+            <p>Systèmes de vidéo surveillance haute résolution pour votre sécurité.</p>
+        </div>
+        <button onclick="ajouterPanier('Caméra')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20une%20caméra" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="interrupteur.PNG" alt="Interrupteur design">
+            <h3>Interrupteur</h3>
+            <p>Design moderne et mécanismes robustes pour une installation soignée.</p>
+        </div>
+        <button onclick="ajouterPanier('Interrupteur')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20un%20interrupteur" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="gaine.png" alt="Gaine électrique ICTA">
+            <h3>Gaine ICTA</h3>
+            <p>Gaine annelée isolante pour la protection et l'encastrement de vos circuits électriques.</p>
+        </div>
+        <button onclick="ajouterPanier('Gaine ICTA')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20de%20la%20gaine%20électrique" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="coffre.png" alt="Coffret électrique">
+            <h3>Coffret électrique</h3>
+            <p>Permet de centraliser, protéger et organiser les circuits électriques d’une installation. Il accueille les disjoncteurs et assure une distribution sécurisée de l’électricité pour les maisons, commerces et bâtiments.</p>
+        </div>
+        <button onclick="ajouterPanier('Coffret électrique')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20un%20coffret%20électrique" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="boite.png" alt="Relais de protection numérique">
+            <h3>Relais de Protection</h3>
+            <p>Coffret électrique numérique permettant de centraliser, protéger et organiser les circuits électriques d’une installation de manière intelligente.</p>
+        </div>
+        <button onclick="ajouterPanier('Relais de Protection')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20un%20relais%20de%20protection%20numérique" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+    <div class="product">
+        <div>
+            <img src="spot.png" alt="Spots LED encastrables">
+            <h3>Spots LED encastrables</h3>
+            <p>Solution d’éclairage moderne conçue pour apporter une lumière uniforme, élégante et économique. Idéals pour les maisons, bureaux et commerces, ils offrent un design discret avec une faible consommation d’énergie.</p>
+        </div>
+        <button onclick="ajouterPanier('Spots LED')" class="btn-order" style="border:none; cursor:pointer; width:100%; margin-bottom:10px;">
+            Ajouter au panier
+        </button>
+        <a href="https://wa.me/221788244825?text=Bonjour,%20je%20souhaite%20commander%20des%20spots%20LED" class="btn-order" target="_blank">
+            Commander
+        </a>
+    </div>
+
+</section>
+
+<section class="services-preview" style="background: #f0f0f0; margin-top: 40px; padding: 60px 8%;">
+    <div class="cards">
+        <div class="card">
+            <h3>🚚 Livraison Rapide</h3>
+            <p>Nous livrons votre matériel partout à Thiès et ses environs.</p>
+        </div>
+        <div class="card">
+            <h3>💎 Qualité Garantie</h3>
+            <p>Tout notre matériel est rigoureusement sélectionné par nos experts.</p>
+        </div>
+        <div class="card">
+            <h3>📞 Conseils d'Experts</h3>
+            <p>Besoin d'aide pour choisir ? Nos électriciens vous conseillent.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Mouhamed Toure - Tous droits réservés</p>
+</footer>
+
+<a href="https://wa.me/221788244825" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    function ajouterPanier(produit) {
+        // Récupérer le panier existant ou en créer un nouveau
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        panier.push(produit);
+        localStorage.setItem('panier', JSON.stringify(panier));
+        
+        // Mettre à jour le compteur visuel
+        updateCompteur();
+
+        document.getElementById("nb").style.transform = "scale(1.2)";
+        setTimeout(() => document.getElementById("nb").style.transform = "scale(1)", 200);
+    }
+
+    function updateCompteur() {
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        document.getElementById("nb").innerHTML = panier.length;
+    }
+    
+    updateCompteur(); // Charger le nombre au démarrage de la page
+</script>
+
+</body>
+</html>

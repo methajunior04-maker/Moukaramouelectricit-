@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEG - Installation Électrique & Maintenance au Sénégal</title>
+    <meta name="description" content="MOUKARAMOU ÉLECTRICITÉ GÉNÉRALE (MEG) : Experts en installation électrique, maintenance, climatisation et vidéosurveillance à Thiès, Sénégal.">
+    <meta name="keywords" content="électricité, Sénégal, Thiès, maintenance, climatisation, vidéosurveillance, installation électrique, MEG">
+    <meta name="author" content="Mouhamed Toure">
+
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo MOUKARAMOU ELECTRICITE GENERALE">
+    </div>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="apropos.html">À propos</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="devis.html">Devis</a>
+        <a href="index.html#assistant">Assistant</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" style="color: #ffd000;"><i class="fas fa-shopping-cart"></i> <span id="nb">0</span></a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <img src="banniere.png" alt="Bannière d'accueil MEG" class="banner-img">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-left">
+
+            <h1>
+                Votre partenaire en
+                <span>Électricité Générale</span>
+            </h1>
+
+            <p>
+                Installation • Maintenance • Caméra • Climatisation
+            </p>
+
+            <div class="hero-buttons">
+                <a href="devis.html" class="btn">Demander un devis</a>
+                <a href="services.html" class="btn2">Découvrir nos services</a>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <h2>150+</h2>
+                    <p>Clients</p>
+                </div>
+                <div>
+                    <h2>200+</h2>
+                    <p>Interventions</p>
+                </div>
+                <div>
+                    <h2>5+</h2>
+                    <p>Années</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="services-preview">
+
+    <h2>Nos Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>⚡ Installation électrique</h3>
+            <p>
+                Installation domestique et industrielle.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔧 Maintenance</h3>
+            <p>
+                Dépannage et maintenance électrique.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📹 Caméra</h3>
+            <p>
+                Systèmes de surveillance modernes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="assistant-section" id="assistant">
+    <div class="chat-container">
+        <h2>⚡ Assistant Virtuel MEG</h2>
+        <div id="messages">
+            <!-- Les messages s'afficheront ici dynamiquement -->
+        </div>
+        <div class="chat-input-area">
+            <div class="input-group">
+                <i class="fas fa-comment-dots"></i>
+                <input type="text" id="question" placeholder="Répondez ici..." onkeypress="if(event.key === 'Enter') ask()">
+            </div>
+            <button onclick="ask()">Envoyer</button>
+        </div>
+    </div>
+</section>
+
+<section class="flyer">
+
+    <h2>Notre Entreprise</h2>
+
+    <img src="flyer.jpeg" alt="Flyer de présentation de l'entreprise MEG">
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Mouhamed Toure - Tous droits réservés
+    </p>
+
+</footer>
+
+<a href="https://wa.me/221788244825" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    const messagesDiv = document.getElementById("messages");
+    const inputField = document.getElementById("question");
+    let step = 0;
+
+    function addMessage(text, type) {
+        const msg = document.createElement("div");
+        msg.className = `msg ${type}`;
+        msg.innerHTML = text.replace(/\n/g, '<br>');
+        messagesDiv.appendChild(msg);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function showTyping(callback, delay = 1500) {
+        const id = "loading-" + Math.random().toString(36).substr(2, 9);
+        const loadingHtml = `<div class="msg bot typing" id="${id}"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
+        messagesDiv.insertAdjacentHTML('beforeend', loadingHtml);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+        setTimeout(() => {
+            const el = document.getElementById(id);
+            if(el) el.remove();
+            callback();
+        }, delay);
+    }
+
+    function initChat() {
+        showTyping(() => {
+            addMessage("Bonjour 👋\n\nBienvenue chez <strong>MOUKARAMOU ÉLECTRICITÉ GÉNÉRALE</strong> ⚡\n\nJe suis votre assistant virtuel et je peux vous aider pour :\n\n⚡ Installation électrique\n🔧 Dépannage électrique\n🏠 Électricité maison\n🏢 Installation bâtiment\n📹 Caméra de surveillance\n❄️ Climatisation et froid\n💡 Éclairage intérieur et extérieur\n🔌 Tableau électrique\n🛡️ Protection électrique\n⚙️ Maintenance électrique\n📦 Vente de matériel électrique\n☀️ Solutions solaires\n📐 Étude et devis", "bot");
+            
+            setTimeout(() => {
+                showTyping(() => {
+                    addMessage("Dites-moi simplement ce dont vous avez besoin.\n\nExemples :\n• Je veux installer des spots\n• J’ai une panne électrique\n• Je cherche un coffret électrique\n• Je veux sécuriser mon installation\n• Je veux acheter du matériel\n• Je veux un devis\n\nJe vais vous guider étape par étape...", "bot");
+                    
+                    setTimeout(() => {
+                        showTyping(() => {
+                            addMessage("Pour mieux vous aider :\n\n1️⃣ <strong>Vous êtes :</strong>\n□ Particulier | □ Entreprise | □ Commerce\n\n2️⃣ <strong>Quel service vous intéresse ?</strong>\n□ Installation | □ Dépannage | □ Achat matériel | □ Caméra | □ Climatisation\n\n3️⃣ <strong>Où se situe votre projet ?</strong>\n\n4️⃣ <strong>Quel est votre budget estimé ?</strong>\n\n5️⃣ <strong>Souhaitez-vous une intervention rapide ?</strong>", "bot");
+                            step = 1;
+                        }, 2000);
+                    }, 1500);
+                }, 2000);
+            }, 1000);
+        }, 1000);
+    }
+
+    function ask() {
+        let val = inputField.value.trim();
+        if (!val) return;
+        
+        addMessage(val, "user");
+        inputField.value = "";
+
+        if (step === 1) {
+            showTyping(() => {
+                addMessage("Merci pour ces informations ✅\n\nVotre demande semble nécessiter l’avis d’un technicien.\n\nCliquez ci-dessous pour continuer avec un expert MOUKARAMOU ÉLECTRICITÉ GÉNÉRALE sur WhatsApp.", "bot");
+                
+                setTimeout(() => {
+                    addMessage('<a href="https://wa.me/221788244825?text=Bonjour%20je%20viens%20du%20site%20MEG" target="_blank" class="expert-btn">👉 Discuter avec un expert</a>', "bot");
+                    step = 2;
+                }, 500);
+            });
+        } else if (step === 2) {
+            showTyping(() => {
+                addMessage("N'hésitez pas à cliquer sur le bouton vert ci-dessus pour finaliser votre demande avec nos techniciens. À très bientôt !", "bot");
+            });
+        }
+    }
+
+    // Lancement du chat
+    window.addEventListener('load', () => {
+        const section = document.getElementById('assistant');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && step === 0) {
+                initChat();
+            }
+        }, { threshold: 0.5 });
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>

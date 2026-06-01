@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander un Devis - MEG</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.jpeg"></div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="devis.html">Devis</a>
+            <a href="index.html#assistant">Assistant</a>
+            <a href="contact.html">Contact</a>
+            <a href="panier.html" style="color: #ffd000;"><i class="fas fa-shopping-cart"></i> <span id="nb">0</span></a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <img src="banniere.png" alt="Bannière Devis" class="banner-img">
+        <h1>Demander un devis</h1>
+    </section>
+
+    <section class="devis-page">
+        <form id="devisForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="d_nom" placeholder="Nom complet" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="d_tel" placeholder="Téléphone" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="d_adresse" placeholder="Adresse du projet">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-tools" style="top: 22px;"></i>
+                <select id="d_service" required>
+                    <option value="" disabled selected>Type de service</option>
+                    <option>Installation Électrique</option>
+                    <option>Maintenance / Dépannage</option>
+                    <option>Caméra de Surveillance</option>
+                    <option>Climatisation</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-comment-alt" style="top: 20px;"></i>
+                <textarea id="d_projet" placeholder="Décrivez votre projet en détail..." style="height: 150px;"></textarea>
+            </div>
+            <button type="submit" class="btn-order" style="border:none; width:100%; cursor:pointer;">Envoyer la demande via WhatsApp</button>
+        </form>
+
+        <div id="successDevis" class="success-box" style="display: none; margin-top: 20px;">
+            <i class="fas fa-check-circle"></i>
+            <h2>Demande préparée !</h2>
+            <p>Cliquez sur le bouton pour envoyer les détails sur WhatsApp.</p>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Mouhamed Toure - Tous droits réservés</p></footer>
+    <a href="https://wa.me/221788244825" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        document.getElementById('devisForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            const nom = document.getElementById('d_nom').value;
+            const tel = document.getElementById('d_tel').value;
+            const adresse = document.getElementById('d_adresse').value || "Non précisée";
+            const service = document.getElementById('d_service').value;
+            const projet = document.getElementById('d_projet').value || "Pas de détails";
+            
+            // Construction du message WhatsApp
+            const message = `Bonjour MEG, je souhaite demander un devis.\n\n👤 *Client:* ${nom}\n📞 *Tel:* ${tel}\n📍 *Adresse:* ${adresse}\n🛠️ *Service:* ${service}\n📝 *Projet:* ${projet}`;
+            
+            const whatsappUrl = `https://wa.me/221788244825?text=${encodeURIComponent(message)}`;
+            
+            // Interaction visuelle
+            window.open(whatsappUrl, '_blank');
+        };
+
+        // Mise à jour du compteur panier au chargement
+        function updateCompteur() {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            const nb = document.getElementById("nb");
+            if(nb) nb.innerHTML = panier.length;
+        }
+        updateCompteur();
+    </script>
+</body>
+</html>
